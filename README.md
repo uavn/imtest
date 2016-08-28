@@ -1,2 +1,0 @@
-# imtest
-Image Test 
