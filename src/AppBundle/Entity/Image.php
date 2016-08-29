@@ -22,9 +22,8 @@ class Image
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="album", type="integer")
+     * @@ORM\ManyToOne(targetEntity="Album")
+     * @ORM\JoinColumn(name="albumId", referencedColumnName="id")
      */
     private $album;
 

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Album
@@ -28,6 +29,14 @@ class Album
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Image", mappedBy="album")
+     */
+    private $images;
+
+    public function __construct() {
+        $this->images = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -61,6 +70,16 @@ class Album
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Get images
+     *
+     * @return array
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 }
 
