@@ -1,0 +1,27 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block content %}
+
+<div class="wrap">
+  <h1>Albums list</h1>
+
+  <div class="albums">
+    {% for album in albums %}
+      <div class="album">
+        <div class="album-head">
+          <a href="{{ url('album', {id: album.id}) }}">{{ album.name }}</a>
+        </div>
+
+        <ul class="album-images">
+          {% for img in album.images.slice(0, 10) %}
+            <li>
+              <a href="{{ img.src }}" target="_blank"><img src="{{ img.src }}"/></a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,3 +1,6 @@
+@import 'https://fonts.googleapis.com/css?family=Comfortaa';
+@import 'https://fonts.googleapis.com/css?family=Poiret+One&subset=cyrillic,latin-ext';
+
 /* RESET */
 * {
   margin: 0;
@@ -32,3 +35,110 @@
 }
 
 /* CONTENT */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+  background-color: #aaa;
+}
+
+h1 {
+  font-family: 'Poiret One', cursive;
+  font-weight: 100;
+  margin: 15px 0 20px 0;
+}
+
+.wrap {
+  min-height: 100%;
+  width: 960px;
+  margin: auto;
+  box-shadow: 0 0 10px #333;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* HOMEPAGE */
+.albums {
+
+}
+
+.album {
+  float: left;
+  width: 31%;
+  margin: 5px 1%;
+  /*margin-bottom: 10px;*/
+  border: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.album-head {
+  background-color: #333;
+  color: #fff;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.album-head a {
+  color: #fff;
+}
+
+.album-head a:hover {
+  opacity: 0.8;
+}
+
+.album img {
+  width: 53px;
+  height: 53px;
+}
+
+.album-images {
+  list-style: none;
+  padding: 10px 4px;
+}
+
+.album-images li {
+  display: inline;
+}
+
+/* ALBUM PAGE */
+.images {
+  text-align: justify;
+  text-align-last: justify;
+  list-style: none;
+}
+
+.images li {
+  display: inline;
+}
+
+/* NAVIGATION */
+.navigation {
+  margin-top: 20px;
+}
+
+.navigation span {
+  padding: 5px;
+  display: inline-block;
+  border-radius: 3px;
+
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfff4+0,dfe5d7+40,b3bead+100;Wax+3D+%233 */
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+
+.navigation span {
+  color: #555;
+}
+
+.navigation span a {
+  color: #000;
+}

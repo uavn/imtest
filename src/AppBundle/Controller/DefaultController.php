@@ -13,19 +13,35 @@ class DefaultController extends Controller
    * @Route("/", name="homepage")
    * @Template()
    */
-  public function indexAction(Request $request)
+  public function homepageAction(Request $request)
   {
-    
-    return [];
+    $albums = $this->get('gallery')
+      ->getAlbums(1/* page */, 1000 /* limit */);
+
+    // print_r($albums);die;
+    return [
+      'albums' => $albums
+    ];
   }
 
   /**
    * @Route("/album/{id}", name="album")
-   * @Route("/album/{id}/page/{page}", name="album-page")
+   * @Route("/album/{id}/page/{page}/", name="album-page", requirements={"page": "\d+"})
    * @Template()
    */
   public function albumAction(Request $request, $id, $page = 1)
   {
-    return [];
+    $album = $this->get('gallery')
+      ->getAlbum($id);
+
+    $images = $this->get('gallery')
+      ->getImages($id, $page);
+
+    $images->setUsedRoute('album-page');
+
+    return [
+      'album' => $album,
+      'images' => $images
+    ];
   }
 }
